@@ -1,0 +1,26 @@
+
+@font-face {
+  font-family: "HarmonyOS_Sans_Medium";
+  font-display: swap;
+  src: url("assets/font/HarmonyOS_Sans_Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Pacifico";
+  font-display: swap;
+  src: url("assets/font/Pacifico.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "UnidreamLED";
+  font-display: swap;
+  src: url("assets/font/UnidreamLED.ttf") format("truetype");
+}
+
+.font-pacifico {
+  font-family: Pacifico !important;
+}
+
+.font-led {
+  font-family: UnidreamLED !important;
+}

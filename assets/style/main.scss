@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "font";
+@import "element";
+@import "media";
+
+
+
+/*全局样式*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  color: #fff;
+  overflow: hidden;
+  font-family: "HarmonyOS_Sans_Medium", sans-serif;
+}
+
+*,
+a,
+p {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  text-decoration: none;
+  color: #fff;
+  box-sizing: border-box;
+
+  &:hover {
+    transition: 0.3s;
+  }
+}
+
+// 文字超出
+.text-hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bg-blur {
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  &.hide {
+    transition: background-color 0.3s;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+
+.bg-blur-hover {
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(1.02);
+  }
+  &:active {
+    transform: scale(0.92);
+  }
+  &.dark:hover {
+    background: rgb(0 0 0 / 40%);
+  }
+}
+
+.bg-blur-sd {
+  border-radius: 6px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+// 自定义鼠标
+#cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 25px;
+  opacity: 0.25;
+  z-index: 10086;
+  pointer-events: none;
+  transition: 0.2s ease-in-out;
+  transition-property: background, opacity, transform;
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  &.active {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+}
+
+// Transition 动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes fade-blur-in {
+  from {
+    filter: blur(20px) brightness(0.3);
+    transform: scale(1.6);
+  }
+  to {
+    filter: blur(0) brightness(1);
+    transform: scale(1.2);
+  }
+}
+
+@keyframes fade-blur-main-in {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+// 滚动条样式
+::-webkit-scrollbar,
+scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb,
+scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
